@@ -35,49 +35,6 @@ beginBtn.addEventListener("click", () => {
 });
 
 // ================================
-// FLOATING PETALS
-// ================================
-
-function createPetal() {
-
-    const petal = document.createElement("div");
-
-    petal.innerHTML = "🌸";
-
-    petal.style.position = "fixed";
-    petal.style.left = Math.random() * 100 + "vw";
-    petal.style.top = "-50px";
-    petal.style.fontSize =
-        Math.random() * 15 + 15 + "px";
-
-    petal.style.pointerEvents = "none";
-    petal.style.opacity = "0.7";
-    petal.style.zIndex = "1";
-
-    document.body.appendChild(petal);
-
-    let y = -50;
-
-    const fall = setInterval(() => {
-
-        y += 1.5;
-
-        petal.style.top = y + "px";
-
-        if (y > window.innerHeight + 100) {
-
-            clearInterval(fall);
-            petal.remove();
-
-        }
-
-    }, 16);
-
-}
-
-setInterval(createPetal, 1200);
-
-// ================================
 // SCROLL REVEAL
 // ================================
 
@@ -202,10 +159,26 @@ for(let i = 0; i < 5; i++){
 
         if(flowersFound === 5){
 
-            flowerCounter.innerHTML =
-            "Completed! 🌷";
+    flowerCounter.innerHTML = `
 
-        }
+        <img
+            src="images/bouquet.png"
+            class="bouquet-reward-img"
+            alt="Bouquet">
+
+        <p class="bouquet-quote">
+
+            Every flower you found became part of this bouquet.
+
+            <br><br>
+
+            Just like every little memory became part of our story. 💐✨
+
+        </p>
+
+    `;
+
+}
 
         checkUnlock();
 
@@ -222,6 +195,11 @@ document.getElementById("flower-stage");
 
 const waterBtn =
 document.getElementById("water-btn");
+
+const gardenMessage =
+document.getElementById("garden-message");
+
+let waterCount = 0;
 
 const stages = [
 
@@ -246,12 +224,15 @@ waterBtn.addEventListener("click", () => {
 
     }
 
-    if(currentStage === 4){
+   if(currentStage === 4){
 
-        waterBtn.innerHTML =
-        "Bloomed 💜";
+    waterBtn.innerHTML =
+    "Bloomed 💜";
 
-    }
+    gardenMessage.innerHTML =
+    "Some flowers bloom in gardens. Some bloom in people's lives. Thank you for being one of them. 💜";
+
+}
 
     checkUnlock();
 
@@ -338,6 +319,9 @@ document.getElementById("wish-message");
 const goldenArea =
 document.getElementById("golden-star-area");
 
+const jarImage =
+document.getElementById("jar-image");
+
 const wishObserver =
 new IntersectionObserver((entries)=>{
 
@@ -420,6 +404,19 @@ setInterval(createStar,1200);
 
 function spawnGoldenStar(){
 
+    jarImage.src =
+    "images/jar-full.png";
+
+    jarImage.animate(
+[
+    {transform:"scale(1)"},
+    {transform:"scale(1.15)"},
+    {transform:"scale(1)"}
+],
+{
+    duration:800
+}
+);
     wishMessage.innerHTML =
     "✨ Your wish jar is full ✨";
 
