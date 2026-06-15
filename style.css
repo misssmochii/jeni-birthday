@@ -160,22 +160,23 @@ linear-gradient(
 
 .opening-card{
 
+    background:white;
 
-background:white;
+    width:min(500px,90%);
 
-width:min(500px,90%);
+    padding:50px;
 
-padding:50px;
+    text-align:center;
 
-text-align:center;
+    border-radius:30px;
 
-border-radius:30px;
+    box-shadow:
+    0 20px 40px
+    rgba(0,0,0,.08);
 
-box-shadow:
-0 20px 40px
-rgba(0,0,0,.08);
-
-
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
 .opening-top{
@@ -196,6 +197,23 @@ font-size:.8rem;
 margin:20px 0;
 
 
+}
+
+#enter-btn{
+
+    margin-top:25px;
+
+    background:#a88cf9;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:999px;
+
+    cursor:pointer;
 }
 
 /* =====================
@@ -441,54 +459,85 @@ FLOWER QUEST
 ===================== */
 
 #flower-area{
-
-
 position:relative;
-
 width:100%;
-
 max-width:1000px;
-
 height:500px;
-
-
 }
 
 .flower{
-
-
 position:absolute;
-
 font-size:2rem;
-
 cursor:pointer;
-
 transition:.3s;
-
-
 }
 
 .flower:hover{
-
-
 transform:
 scale(1.3);
-
-
 }
 
+#flower-reward{
+display:none;
+margin-top:40px;
+text-align:center;
+animation:fadeIn 1.5s ease;
+}
+
+#flower-reward img{
+width:250px;
+max-width:80%;
+margin-bottom:20px;
+}
+
+#flower-reward p{
+max-width:600px;
+margin:auto;
+color:#7c65d8;
+font-size:1.1rem;
+line-height:1.8;
+font-style:italic;
+}
+
+.bouquet-reward-img{
+    display:block;
+
+    width:180px;
+
+    margin:20px auto 15px auto;
+}
+
+.bouquet-quote{
+
+    max-width:500px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    color:#7c65d8;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+}
 /* =====================
 GARDEN
 ===================== */
 
 #flower-stage{
-
-
 font-size:8rem;
-
 margin:30px 0;
+}
 
-
+#garden-message{
+    margin-top:20px;
+    text-align:center;
+    color:#7c65d8;
+    font-size:1.1rem;
+    max-width:500px;
+    line-height:1.8;
 }
 
 /* =====================
@@ -559,37 +608,37 @@ margin:20px 0;
 
 }
 
+#jar-image{
+
+    width:180px;
+
+    max-width:80%;
+
+}
+
 #star-counter{
 
+    font-size:1.3rem;
 
-font-size:1.3rem;
+    text-align:center;
 
+    width:100%;
+
+    margin-top:20px;
 
 }
 
 #wish-message{
-
-
 min-height:50px;
-
 margin-top:30px;
-
 text-align:center;
-
-
 }
 
 .golden-star{
-
-
 font-size:5rem;
-
 cursor:pointer;
-
 animation:
 glow 2s infinite;
-
-
 }
 
 @keyframes glow{
@@ -658,9 +707,16 @@ font-size:2rem;
 padding:0;
 }
 
-/* =====================
-RESPONSIVE
-===================== */
+.volume-note{
+    margin:25px 0;
+    Padding:15px;
+    background:rgba(255,255,255,.7);
+    border:2px dashed #c8b4ff;
+    border-radius:15px;
+    color:#7c65d8;
+    font-size:.95rem;
+    line-height:1.6;
+}
 
 @media(max-width:768px){
 
